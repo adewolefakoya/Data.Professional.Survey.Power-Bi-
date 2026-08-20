@@ -1,19 +1,16 @@
-# [Project Title]
-> *One sentence. What did you analyze, build, or solve - and why does it matter?*
+# Data Professional Survey Analysis
+> *Exploring Roles, Salaries, Skills, Demographics, and Job Satisfaction with Power Bi*
 
 ---
 
 ## ⚙️ Project Type Flags
-> *Check what applies. This helps reviewers and collaborators understand the nature of the work at a glance. Delete this block before publishing.*
 
-- [ ] Exploratory Data Analysis (EDA)
-- [ ] SQL Analysis / Querying
-- [ ] Dashboard / Data Visualization
-- [ ] Data Pipeline / ETL
-- [ ] Predictive Modelling / Machine Learning
-- [ ] Data Cleaning / Wrangling
-- [ ] End-to-End (multiple of the above)
-- [ ] Other: ___________
+- [x] Exploratory Data Analysis (EDA)
+- [x] Dashboard / Data Visualization
+- [x] Data Pipeline / ETL
+- [x] Data Cleaning / Wrangling
+- [x] End-to-End (multiple of the above)
+
 
 ---
 
@@ -21,75 +18,47 @@
 1. [Project Overview](#1-project-overview)
 2. [Objectives](#2-objectives)
 3. [Project Scope & Tools](#3-project-scope--tools)
-4. [Repository Structure](#4-repository-structure)
-5. [Data Workflow](#5-data-workflow)
-6. [Data Model & Schema](#6-data-model--schema)
-7. [ERD - Entity Relationship Diagram](#7-erd--entity-relationship-diagram) *(SQL projects)*
-8. [Analysis & Metrics](#8-analysis--metrics)
-9. [Key Insights](#9-key-insights)
-10. [Recommendations](#10-recommendations)
-11. [Assumptions & Limitations](#11-assumptions--limitations)
-12. [Future Enhancements](#12-future-enhancements)
-13. [Deliverables](#13-deliverables)
-14. [Author](#14-author)
+4. [Data Workflow](#4-data-workflow)
+5. [Data Model & Schema](#5-data-model--schema)
+6. [Analysis & Metrics](#6-analysis--metrics)
+7. [Key Insights](#7-key-insights)
+8. [Recommendations](#8-recommendations)
+9. [Assumptions & Limitations](#9-assumptions--limitations)
+10. [Portfolio Summary](#10-portfolio-summary)
+11. [Author](#11-author)
 
 ---
 
 ## 1. Project Overview
 
-<!--
-  Write 3–5 sentences in plain language.
-  Cover: context → problem → approach → outcome.
-  Read it out loud. If it sounds like a form - rewrite it.
+**Context:** 
+A survey was conducted among data professionals to better understand their career backgrounds, salaries, programming language preferences, demographics, job satisfaction, and experiences entering the data industry. The raw survey data contained a mixture of structured responses and free-text answers, making it useful for practicing real-world data preparation and visualization.
 
-  WHAT GOOD LOOKS LIKE:
-  "A mid-size retail business was seeing inconsistent revenue across
-  its regional stores but couldn't identify the root cause. This project
-  explored 18 months of transaction data across five regions to determine
-  whether underperformance was driven by sales volume, pricing, or return
-  rates. The analysis revealed that one region's gap was almost entirely
-  explained by an unusually high return rate on a single product category -
-  a finding invisible in the company's top-level reporting."
+**Problem Statement:**
+The raw survey data contained inconsistent and difficult-to-analyze responses, particularly around job titles, programming languages, salary ranges, industries, and countries. The goal was to transform the raw data into a cleaner dataset and create an interactive Power BI dashboard that could highlight meaningful patterns across data professionals.
 
-  WHAT TO AVOID:
-  "This project analyzes sales data to find trends and insights."
-  (Too vague. Could describe 10,000 projects. Describes none of them.)
--->
+**Approach:**
+Approach:
+The dataset was imported into Power BI and transformed using Power Query. Selected fields were cleaned and simplified, salary ranges were converted into approximate average salary values, and an interactive dashboard was created to explore salaries, job roles, programming languages, demographics, job satisfaction, and difficulty entering the data field.
 
-**Context:** [The business, research, or personal situation that motivated this project.]
-
-**Problem Statement:** [The specific question or challenge you were addressing.]
-
-**Approach:** [In 1–2 sentences - how did you tackle it?]
-
-**Outcome:** [What did you produce or discover?]
+**Outcome:**
+The project produced an interactive Power BI dashboard containing key metrics, salary comparisons, programming-language preferences, country distribution, job satisfaction scores, gender-based salary comparisons, and perceptions of entering the data industry.
 
 ---
 
 ## 2. Objectives
 
-<!--
-  Write objectives that are specific enough to succeed or fail.
-  Use action-oriented verbs: Identify, Determine, Quantify, Build, Evaluate.
+- **Primary Objective:**
+  Build an interactive Power BI dashboard that provides an overview of data professionals and their career characteristics.
 
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Determine whether customer churn rate correlates with support ticket volume."
-  ✅ "Identify the top three revenue-driving product categories across all regions."
-  ✅ "Build a reproducible pipeline that ingests and cleans daily sales exports."
-
-  WHAT TO AVOID:
-  ❌ "Explore the data."
-  ❌ "Gain insights."
-  ❌ "Understand trends."
-  (These can't fail - which means they can't succeed either.)
--->
-
-- **Primary Objective:** [The main thing you set out to do]
-- **Secondary Objective 1:** [Supporting goal]
-- **Secondary Objective 2:** [Supporting goal]
-- **Secondary Objective 3:** [Remove if not applicable]
-
-> 💡 *Every analysis decision in this project traces back to one of these objectives.*
+- **Secondary Objective 1:**
+  Clean and transform selected fields from the raw survey data so they could be effectively analyzed.
+  
+- **Secondary Objective 2:**
+  Explore salary differences across job titles, countries, and gender.
+  
+- **Secondary Objective 3:**
+  Understand respondents’ preferred programming languages and levels of job satisfaction.
 
 ---
 
@@ -97,432 +66,213 @@
 
 ### Scope
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  In Scope: "Transaction-level data for Regions A–E, Jan 2023–Jun 2024.
-             Analysis covers revenue, return rates, and product category performance."
-  Out of Scope: "Customer demographics and marketing spend data were excluded -
-                 demographic data was incomplete for two regions, and marketing
-                 data sits in a separate system outside this engagement."
-
-  WHAT TO AVOID:
-  ❌ Leaving Out of Scope blank. This is the section that protects your credibility.
-     If you don't define the fence, reviewers assume you missed things.
--->
-
 | Dimension | Details |
 |-----------|---------|
-| **In Scope** | [What is included - data sources, time periods, segments] |
-| **Out of Scope** | [What you explicitly excluded - and a brief reason why] |
-| **Time Period** | [Date range of the data or the project itself] |
-| **Granularity** | [Unit of analysis - row-level, daily aggregates, per-user, etc.] |
+| **In Scope** | Survey responses from data professionals, including job title, salary, programming language, country, gender, age, job satisfaction, and difficulty entering the data field |
+| **Out of Scope** | Advanced normalization of every free-text response, predictive modeling, advanced statistical analysis, and extensive salary cleaning |
+| **Time Period** | Survey collection period; exact dates were not specified in the transcript |
+| **Granularity** | Individual survey respondent / row-level survey response |
 
 ### Tools & Technologies
 
-<!--
-  List only what you actually used on this project.
-  This is not your skills section - it's the project's technical context.
--->
-
 | Category | Tool(s) Used |
 |----------|-------------|
-| Data Storage | [e.g., PostgreSQL, CSV files, BigQuery, S3] |
-| Data Processing | [e.g., Python, R, SQL, Excel, dbt] |
-| Analysis | [e.g., pandas, dplyr, custom SQL queries] |
-| Visualization | [e.g., Matplotlib, Tableau, Power BI, Looker] |
-| Version Control | [e.g., Git / GitHub] |
-| Documentation | [e.g., Markdown, Notion] |
-| Other | [Any additional tools] |
+| Data Storage | CSV files |
+| Data Processing | Power Query |
+| Analysis | Microsoft Power BI |
+| Visualization | Power BI |
+| Version Control | GitHub |
+| Other | Power BI calculated expressions |
 
 ---
 
-## 4. Repository Structure
+## 4. Data Workflow
 
-```
-[project-root]/
-│
-├── data/
-│   ├── raw/                  # Original, unmodified source data - never edited
-│   ├── processed/            # Cleaned and transformed data
-│   └── external/             # Reference data, lookup tables, third-party files
-│
-├── notebooks/                # Jupyter, R Markdown, or Colab notebooks
-│
-├── scripts/                  # Reusable .py, .R, or .sh processing files
-│
-├── queries/                  # SQL files (retain this folder for SQL-heavy projects)
-│   ├── exploratory/          # Ad-hoc or investigative queries
-│   ├── transformations/      # Cleaning and reshaping logic
-│   └── final/                # Production-ready or presentation queries
-│
-├── reports/                  # Final outputs: PDFs, slide decks, Word docs
-│
-├── visuals/                  # Exported charts, dashboard screenshots, ERD diagrams
-│
-├── docs/                     # Data dictionaries, schema notes, reference material
-│
-├── project_metadata.yml      # Machine-readable metadata (optional)
-└── README.md                 # You are here
-```
+Overall Workflow
+Raw Survey Data → Power BI → Power Query Cleaning → Data Transformation → Analysis → Interactive Dashboard
 
-> ⚠️ *Delete folders you didn't use. An empty folder is worse than no folder.*
-> SQL-heavy projects: keep `queries/`. Analysis-only projects: keep `notebooks/`. Both? Keep both.
+1. **Source:**
+   The project used raw survey data collected from approximately 630 data professionals. The data was exported as a CSV file from the survey platform and made available through GitHub.
+   
+2. **Ingestion:**
+   The CSV dataset was imported directly into Power BI and loaded into Power Query Editor for preparation before being used in the report.
+   
+3. **Cleaning:**
+   
+   Several data-quality issues were identified in the raw dataset, including:
+- Inconsistent job-title responses
+- Free-text “Other” responses
+- Multiple variations of programming languagesranges stored as text
+- Country and industry responses containing additional “Other” descriptions
+- Salary values containing K, dashes, and plus signs
+- Instead of extensively standardizing every response, the project simplified selected categories to make the dashboard manageable.
 
----
-
-## 5. Data Workflow
-
-<!--
-  Show how data moved through your project - from source to output.
-  Every transformation decision should be traceable here.
-
-  WHAT GOOD LOOKS LIKE:
-  1. Source: "Monthly CSV exports pulled from the internal POS system.
-              Five files, one per region, covering Jan 2023–Jun 2024."
-  2. Ingestion: "Loaded into Python using pandas. Files concatenated into
-                 a single dataframe (approx. 340,000 rows)."
-  3. Cleaning: "Removed 1.2% of rows with null transaction IDs.
-                Standardised date formats across regional files.
-                Resolved product category naming inconsistencies (3 variants → 1)."
-  4. Transformation: "Created a returns_rate field at product-category level.
-                      Aggregated to weekly and regional grain for trend analysis."
-  5. Analysis: "Descriptive statistics, regional comparison, return rate
-                segmentation by product category."
-  6. Output: "Summary report (PDF), annotated notebook, processed CSV."
-
-  WHAT TO AVOID:
-  ❌ "Data was cleaned and analysed." (No chain. No decisions. No trust.)
--->
-
-```
-[Data Source(s)]
-      ↓
-[Ingestion / Collection Method]
-      ↓
-[Cleaning & Transformation]
-      ↓
-[Analysis / Modelling / Querying]
-      ↓
-[Output / Visualisation / Reporting]
-```
-
-1. **Source:** [Where did the data come from? Format, size, access method.]
-2. **Ingestion:** [How was it brought in?]
-3. **Cleaning:** [What issues did you find and fix?]
-4. **Transformation:** [What new fields, aggregations, or structures did you create?]
-5. **Analysis:** [What methods - statistical, visual, query-based, model-based?]
-6. **Output:** [What form do the results take?]
+4. **Transformation:**
+   
+   Key transformations included:
+- Splitting job-title responses using a delimiter
+- Grouping detailed “Other” job titles into an Other category
+- Splitting programming-language responses to isolate the main category
+- Creating a duplicate salary field for transformation
+- Splitting salary ranges into separate numeric components
+- Removing K, dash, and plus characters from salary values
+- Converting salary components into numeric values
+- Creating an Average Salary field by averaging the lower and upper salary values
+- Converting the resulting salary field into a numeric data type
+- Simplifying country and industry responses
 
 ---
 
-## 6. Data Model & Schema
+## 5. Data Model & Schema
 
-<!--
-  Define your fields so that someone reading your analysis can follow along
-  without digging through your code.
+ Data Professional Survey
 
-  WHAT GOOD LOOKS LIKE (one row example):
-  | transaction_id | string | Unique identifier per sales transaction | TXN-00482 |
-  | return_flag    | boolean | Whether the transaction included a return | TRUE |
-  | region_code    | string | Two-letter identifier for store region | "NE" |
+The project used a single primary dataset, so there were no table joins or relationships involved.
 
-  WHAT TO AVOID:
-  ❌ Skipping this section because "the field names are self-explanatory."
-     They're not. Not to a reviewer. Not to you in six months.
-
-  📌 FOR SQL PROJECTS: If you have multiple tables, create one block per table.
-     Describe join keys and relationships here. Your ERD (Section 7) will
-     visualise what this section describes in text.
-
-  📌 FOR NON-SQL PROJECTS: Describe the shape of your dataset informally
-     if a formal schema doesn't apply. Even one paragraph is more helpful than nothing.
--->
-
-### Dataset / Table: `[name]`
+### Dataset / Table
 
 | Field Name | Data Type | Description | Example Value |
 |------------|-----------|-------------|---------------|
-| `[field_1]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_2]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_3]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| Unique ID | string | Unique identifier for each survey respondent | Respondent ID |
+| Date Taken | date | Date the survey was completed | Survey date |
+| Job Title | text | Respondent’s current professional role | Data Analyst |
+| Current Yearly Salary | text | Original salary response, often represented as a range | 106-125k |
+| Average Salary | numeric | Approximate salary calculated from the salary range | 115,500 |
+| Industry | text | Industry where the respondent works | Technology |
+| Favorite Programming Language | text | Programming language selected by the respondent | Python |
+| Work-Life Balance | numeric | Respondent’s satisfaction score | 7 |
+| Salary Happiness | numeric | Satisfaction with current salary | 5 |
+| Coworker Happiness | numeric | Satisfaction with coworkers | 8 |
+| Management Happiness | numeric | Satisfaction with management | 6 |
+| Upward Mobility | numeric | Satisfaction with career advancement opportunities | 5 |
+| Learning New Things | numeric | Satisfaction with learning opportunities | 8 |
+| Difficulty Breaking Into Data | text | Respondent’s perception of entering the data field | Difficult |
+| Gender | text | Respondent’s gender response | Female |
+| Country | text | Country of the respondent | United States |
+| Age | numeric | Respondent’s age | 29 |
 
-> **Row count (approx.):** [X rows]
-> **Date range:** [Start] – [End]
-> **Key join / relationship:** [e.g., `orders.customer_id` → `customers.id`]
+> **Approximate row count:** 630 respondents
 
-*Add additional table blocks as needed for multi-table projects.*
-
----
-
-## 7. ERD - Entity Relationship Diagram
-### *(Primarily for SQL Projects - remove this section if not applicable)*
-
-<!--
-  An ERD shows how your tables connect to each other visually.
-  It is the fastest way for a reviewer to understand the data structure
-  of a SQL project without reading every query.
-
-  HOW TO INCLUDE YOUR ERD:
-  Option A - Image embed (most common):
-    Export your ERD from dbdiagram.io, DBeaver, Lucidchart, or similar.
-    Save to /visuals/erd.png and reference it below.
-
-  Option B - dbdiagram.io code block (version-controllable):
-    Paste your schema definition code directly in the fenced block below.
-    Anyone can paste it into dbdiagram.io to regenerate the visual.
-
-  Option C - Mermaid diagram (renders natively in GitHub):
-    Use the mermaid code block syntax below.
-    GitHub will render this as a diagram automatically.
-
-  PICK ONE. Don't use all three. Delete the options you don't use.
--->
-
-### Option A - Embedded Image
-![ERD Diagram](visuals/erd.png)
-*[Brief caption: e.g., "Three-table schema - orders, customers, and products joined on shared IDs."]*
 
 ---
 
-### Option B - dbdiagram.io Schema Definition
-```
-Table orders {
-  order_id    int     [pk]
-  customer_id int     [ref: > customers.customer_id]
-  product_id  int     [ref: > products.product_id]
-  order_date  date
-  amount      float
-}
-
-Table customers {
-  customer_id int  [pk]
-  region_code string
-  signup_date date
-}
-
-Table products {
-  product_id   int    [pk]
-  category     string
-  unit_price   float
-}
-```
-*Paste this into [dbdiagram.io](https://dbdiagram.io) to view the visual.*
-
----
-
-### Option C - Mermaid Diagram *(renders on GitHub)*
-```mermaid
-erDiagram
-    ORDERS {
-        int order_id PK
-        int customer_id FK
-        int product_id FK
-        date order_date
-        float amount
-    }
-    CUSTOMERS {
-        int customer_id PK
-        string region_code
-        date signup_date
-    }
-    PRODUCTS {
-        int product_id PK
-        string category
-        float unit_price
-    }
-    ORDERS ||--o{ CUSTOMERS : "placed by"
-    ORDERS ||--o{ PRODUCTS : "contains"
-```
-
----
-
-**Table Relationships Summary:**
-
-| Relationship | Join Key | Type |
-|-------------|----------|------|
-| `orders` → `customers` | `customer_id` | Many-to-One |
-| `orders` → `products` | `product_id` | Many-to-One |
-| [Add rows as needed] | | |
-
----
-
-## 8. Analysis & Metrics
-
-<!--
-  Explain what you measured and how - before you share what you found.
-
-  WHAT GOOD LOOKS LIKE:
-  Metric: "Customer Return Rate"
-  Definition: "Number of transactions flagged as returns divided by total
-               transactions, calculated at product-category and regional grain."
-  Why It Matters: "Return rate - not sales volume - was hypothesised to
-                  explain regional revenue gaps. This metric tests that hypothesis."
-
-  WHAT TO AVOID:
-  ❌ Defining a metric only in code: SUM(returns) / COUNT(transaction_id)
-     That's an implementation. Write the plain-language definition here.
-     Both belong in your project - the definition in the README,
-     the implementation in the code.
--->
+## 6. Analysis & Metrics
 
 ### Analytical Approach
 
-[Describe how you approached the analysis. Were you exploring patterns? Testing a hypothesis? Building and validating a pipeline? Be honest about your method - exploratory work is valid, just call it that.]
+The project followed an exploratory and descriptive analysis approach.
+ Rather than attempting to predict future outcomes, the analysis focused on identifying patterns and differences within the survey responses.
+
+The dashboard used segmentation and aggregation to compare respondents by job title, programming language, country, gender, salary, and job satisfaction.
 
 ### Key Metrics Defined
 
 | Metric | Plain-Language Definition | Why It Matters |
 |--------|--------------------------|----------------|
-| `[Metric 1]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 2]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 3]` | [What it measures, in one sentence] | [What decision or question it answers] |
+| Survey Takers | Total number of people who completed the survey | Provides the overall sample size |
+| Average Age | Average age of survey respondents | Provides demographic context |
+| Average Salary | Approximate average salary based on reported salary ranges | Allows salary comparisons across groups |
+| Average Salary by Job Title | Average reported salary for each role | Highlights differences between data careers |
+| Favorite Programming Language | Number of respondents selecting each programming language | Shows which technologies were most commonly preferred |
+| Work-Life Balance Happiness | Average satisfaction score for work-life balance on a 0–10 scale | Measures perceived work-life balance] |
+| Salary Happiness | Average satisfaction score relating to salary | Shows how satisfied respondents were with compensation |
+| Average Salary by Gender | Average salary grouped by gender | Allows a basic comparison of reported compensation |
+| Difficulty Breaking Into Data | Distribution of responses about entering the data field | Shows how accessible respondents perceived the industry to be |
+| Country Distribution | Distribution of respondents by country | Provides geographic context for salary and career comparisons |
+
 
 ### Methods Used
 
-- [e.g., Descriptive statistics - distribution, central tendency, outlier detection]
-- [e.g., Trend analysis across [time period]]
-- [e.g., Segmentation / group comparison by [dimension]]
-- [e.g., Correlation analysis between [variable A] and [variable B]]
-- [e.g., SQL window functions for [specific aggregation]]
-- [e.g., Custom aggregation or transformation logic in [tool]]
+- Descriptive statistics
+- Average calculations
+- Count and respondent aggregation
+- Group comparison by job title
+- Group comparison by gender
+- Geographic segmentation
+- Category distribution analysis
+- Survey satisfaction analysis
+- Interactive filtering through Power BI visualizations
+  
+---
+
+## 7. Key Insights
+
+**Insight 1:  Data Scientist Respondents Reported the Highest Average Salary**
+Within the survey sample, Data Scientists had the highest reported average salary, followed by Data Engineers and Data Architects. Data Analysts represented a large share of respondents and had a lower average salary than these roles.
+
+This suggests that role specialization and career path may be associated with significant differences in reported compensation.
+
+**Insight 2: Python Was the Most Popular Programming Language**
+Python was clearly the most frequently selected programming language in the survey, followed by languages such as R, JavaScript, Java, and C++.
+
+This indicates that Python was particularly prominent among the professionals represented in this dataset.
+
+**Insight 3: Country Had a Major Impact on Salary Comparisons**
+The dashboard showed noticeable salary differences when respondents were filtered by country. For example, reported salaries for similar roles were substantially different between the United States and India.
+
+This reinforces the importance of considering geographic context when comparing salaries.
+
+**Insight 4 : Salary Satisfaction Was Relatively Low**
+The salary satisfaction gauge showed that respondents were not particularly satisfied with their compensation compared with the 0–10 scale used in the survey.
+
+This suggests that compensation may be an area where many respondents see room for improvement.
+
+**Insight 5 : Breaking Into Data Was Not Perceived as Easy by Everyone**
+Responses ranged from Very Difficult to Very Easy, with respondents spread across the different difficulty categories.
+
+This highlights that entering the data profession can be perceived very differently depending on an individual’s background and circumstances.
+
+**Insight 6 : Reported Average Salaries Were Similar Across Gender Groups**
+The dashboard showed relatively similar average reported salaries between male and female respondents, with the female group slightly higher in this particular sample.
+
+This should be interpreted carefully because the survey sample and methodology do not establish a broader gender-pay conclusion.
 
 ---
 
-## 9. Key Insights
+## 8. Recommendations
 
-<!--
-  Findings + implications. Not just what happened - what it means.
-
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Return rates, not sales volume, explain Region A's underperformance.
-      Region A's return rate on home goods was 34% - more than double the
-      company average. Revenue was not lost at the point of sale; it was
-      lost post-sale through refunds. This points to a fulfilment or
-      product quality issue specific to that region, not a demand problem."
-
-  WHAT TO AVOID:
-  ❌ "Region A had lower revenue than other regions in Q4."
-     (That's an observation. It describes what happened.
-      An insight says what it means and where to look next.)
-
-  Aim for 3–6 insights. Quality over quantity.
--->
-
-**Insight 1: [Short descriptive headline]**
-[What you found + what it suggests. One short paragraph.]
-
-**Insight 2: [Short descriptive headline]**
-[What you found + what it suggests.]
-
-**Insight 3: [Short descriptive headline]**
-[What you found + what it suggests.]
-
-**Insight 4 (if applicable): [Short descriptive headline]**
-[What you found + what it suggests.]
-
----
-
-## 10. Recommendations
-
-<!--
-  Action-oriented. Addressed to a real audience.
-  Tied explicitly to the insight that supports each one.
-
-  WHAT GOOD LOOKS LIKE:
-  Priority: High
-  Recommendation: "Conduct a fulfilment audit for home goods deliveries
-                   in Region A - specifically investigating whether returns
-                   correlate with a particular warehouse, carrier, or SKU batch."
-  Based On: Insight 1 - return rate anomaly in Region A
-  Owner: Operations / Supply Chain team
-
-  WHAT TO AVOID:
-  ❌ "Improve the return rate."
-     (Not actionable. Doesn't say who, how, or where to start.)
-  ❌ "Further analysis is needed."
-     (This is a placeholder, not a recommendation.)
--->
 
 | Priority | Recommendation | Based On | Suggested Owner |
 |----------|---------------|----------|-----------------|
-| High | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Medium | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Low | [Exploratory or longer-term suggestion] | [Insight it comes from] | [Who should act] |
+| High | Standardize job titles and programming-language responses before performing deeper analysis | Inconsistent free-text responses | Data Analyst / Data Engineer |
+| Medium | Collect salary information using a standardized numeric field rather than free-text salary ranges | Salary values required transformation and approximation | Data Analyst |
+| Low | Expand the dashboard with additional demographic and career analysis | Large amount of unused survey information | Data Analyst |
 
 ---
 
-## 11. Assumptions & Limitations
-
-<!--
-  WHAT GOOD LOOKS LIKE:
-  Assumption: "Transaction records were assumed to be complete for all five regions.
-               No validation was performed against source system record counts."
-  Limitation: "The analysis cannot distinguish between returns initiated by
-               the customer vs. returns initiated by the business (e.g., recalls).
-               If business-initiated returns are concentrated in Region A, the
-               return rate finding may reflect a policy decision, not a quality issue."
-
-  WHAT TO AVOID:
-  ❌ Leaving this section blank or writing "None known."
-     Every project has limitations. Documenting them is a sign of
-     analytical maturity - not a confession of failure.
--->
+## 9. Assumptions & Limitations
 
 ### Assumptions
-- [What did you treat as true without being able to verify?]
-- [What simplifications did you make for scope or feasibility?]
-- [What domain rules or definitions did you accept as given?]
+- Salary ranges were treated as representative of the respondent’s compensation range.
+- The midpoint of a salary range was used as an approximate salary value.
+- Responses categorized as “Other” were grouped together rather than individually standardized.
+- Satisfaction scores were treated as numeric values on a 0–10 scale.
+- The survey responses were treated as representative only of the collected sample.
 
 ### Limitations
-- [What gaps exist in the data?]
-- [What analysis was out of scope but could affect interpretation?]
-- [What would a more rigorous version of this project include?]
-- [Are there known biases in the data source or collection method?]
+- Salary is approximate: The average salary field was created by taking the midpoint of reported salary ranges. This is an estimation rather than the respondent’s exact salary.
+- Limited data cleaning: The project intentionally performed only basic cleaning. Many job titles, programming languages, industries, and countries could be standardized further.
+- Free-text responses: “Other” responses contained multiple variations that were not fully normalized.
+- Potential sample bias: The survey was distributed through social media and professional networks, so the respondents may not represent the entire global data-professional population.
+- Self-reported data: Salary, satisfaction, age, and other responses were provided directly by participants and were not independently verified.
 
-> *The goal here is pre-emptive Q&A. What would a thoughtful skeptic push back on? Document the answer here, before they ask.*
-
----
-
-## 12. Future Enhancements
-
-<!--
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Automate the monthly data pull from the POS export folder using
-      a scheduled Python script, replacing the current manual process."
-  ✅ "Expand the return rate analysis to include carrier-level data,
-      which was unavailable in this dataset but exists in the logistics system."
-
-  WHAT TO AVOID:
-  ❌ "Add a machine learning model."
-     (Vague, and disconnected from the actual findings of this project.)
-  ❌ Listing aspirational features that don't follow logically from the work.
--->
-
-- [ ] [Enhancement 1 - specific and traceable to a real gap in this project]
-- [ ] [Enhancement 2]
-- [ ] [Enhancement 3]
-- [ ] [Enhancement 4]
 
 ---
 
-## 13. Deliverables
+## 10. Portfolio Summary
 
-| Deliverable | Description | Location |
-|-------------|-------------|----------|
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
+This project demonstrates an end-to-end Power BI workflow, starting with raw survey data and progressing through data ingestion, Power Query transformation, exploratory analysis, KPI development, and interactive dashboard design. The project also demonstrates an important real-world analytics skill: recognizing that data visualization is only as good as the data preparation behind it, while clearly documenting the assumptions and limitations of the analysis.
 
 ---
 
-## 14. Author
+## 11. Author
 
-**[Your Name]**
-[Your role or title - current or target]
+**Adewole Fakoya**
 
-- 🔗 [LinkedIn URL]
-- 💼 [Portfolio or GitHub profile URL]
-- 📧 [Email - optional]
+Data Analyst
+- 🔗 LinkedIn (https://www.linkedin.com/in/adewole-fakoya-7484a5149)]
+
+
 
 ---
 
